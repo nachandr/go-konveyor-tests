@@ -2,7 +2,6 @@ package analysis
 
 import (
 	"github.com/konveyor/go-konveyor-tests/data"
-	"github.com/konveyor/go-konveyor-tests/data/identity"
 	"github.com/konveyor/go-konveyor-tests/hack/addon"
 	"github.com/konveyor/tackle2-hub/api"
 )
@@ -17,9 +16,6 @@ var Coolstore = TC{
 			"konveyor.io/target=jakarta-ee",
 		},
 	},
-	Identities: []api.Identity{
-		identity.TackleTestappPublicMaven,
-	},
 	Analysis: api.Analysis{
 		Effort: 113,
 		Issues: []api.Issue{
@@ -31,8 +27,8 @@ var Coolstore = TC{
 				Rule:        "session-00000",
 				Incidents: []api.Incident{
 					{
-						File:     "/shared/source/coolstore/src/main/webapp/WEB-INF/web.xml",
-						Line:     5,
+						File: "/shared/source/coolstore/src/main/webapp/WEB-INF/web.xml",
+						Line: 5,
 					},
 				},
 			},
@@ -44,14 +40,14 @@ var Coolstore = TC{
 				Rule:        "javax-to-jakarta-dependencies-00006",
 				Incidents: []api.Incident{
 					{
-						File:     "/shared/source/coolstore/pom.xml",
-						Line:     19,
-						Message:  "Update group dependency by replacing the javax groupId with jakarta.platform",
+						File:    "/shared/source/coolstore/pom.xml",
+						Line:    19,
+						Message: "Update group dependency by replacing the javax groupId with jakarta.platform",
 					},
 					{
-						File:     "/shared/source/coolstore/pom.xml",
-						Line:     25,
-						Message:  "Update group dependency by replacing the javax groupId with jakarta.platform",
+						File:    "/shared/source/coolstore/pom.xml",
+						Line:    25,
+						Message: "Update group dependency by replacing the javax groupId with jakarta.platform",
 					},
 				},
 			},
@@ -421,18 +417,18 @@ var Coolstore = TC{
 					},
 					{
 						File:    "/shared/source/coolstore/src/main/java/com/redhat/coolstore/rest/ProductEndpoint.java",
-						Line:   9,
+						Line:    9,
 						Message: "Replace the javax.inject import statement with jakarta.inject",
 					},
 					{
 						File:    "/shared/source/coolstore/src/main/java/com/redhat/coolstore/rest/ProductEndpoint.java",
-						Line:   9,
+						Line:    9,
 						Message: "Replace the javax.inject import statement with jakarta.inject",
 					},
 				},
 			},
 		},
-	    Dependencies: []api.TechDependency{
+		Dependencies: []api.TechDependency{
 			{
 				Name:     "org.jboss.spec.javax.rmi.jboss-rmi-api_1.0_spec",
 				SHA:      "e87e6dae34a2823c6e2e5a0682d3e6aec8abdaa4",
