@@ -6,10 +6,11 @@ import (
 	"github.com/konveyor/tackle2-hub/api"
 )
 
-var Coolstore = TC{
-	Name:        "Coolstore",
+var CoolstoreWithDeps = TC{
+	Name:        "Coolstore plus dependencies",
 	Application: data.Coolstore,
 	Task:        Analyze,
+	WithDeps:    true,
 	Labels: addon.Labels{
 		Included: []string{
 			"konveyor.io/target=cloud-readiness",
@@ -17,7 +18,7 @@ var Coolstore = TC{
 		},
 	},
 	Analysis: api.Analysis{
-		Effort: 113,
+		Effort: 114,
 		Issues: []api.Issue{
 			{
 				Category:    "mandatory",
@@ -27,8 +28,8 @@ var Coolstore = TC{
 				Rule:        "session-00000",
 				Incidents: []api.Incident{
 					{
-						File: "/shared/source/coolstore/src/main/webapp/WEB-INF/web.xml",
-						Line: 5,
+						File:     "/shared/source/coolstore/src/main/webapp/WEB-INF/web.xml",
+						Line:     5,
 						CodeSnip: "<distributable />",
 					},
 				},
